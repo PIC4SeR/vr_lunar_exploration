@@ -1,0 +1,184 @@
+<robot name="rover_pic_moon" version="1.0">
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.0" xyz="0.00000 0.00000 -1.0482"/>
+    <parent link="chassis_link"/>
+    <child link="base_link"/>
+  </joint>
+  <joint name="boxdown_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.91602"/>
+    <parent link="chassis_link"/>
+    <child link="boxdown_link"/>
+  </joint>
+  <joint name="boxup_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00146 0.02814 0.91602"/>
+    <parent link="chassis_link"/>
+    <child link="boxup_link"/>
+  </joint>
+  <joint name="camera_left_joint" type="fixed">
+    <origin rpy="0.0 1.570795 0.00000" xyz="2.15362 0.25 0.62370"/>
+    <parent link="chassis_link"/>
+    <child link="camera_left_link"/>
+  </joint>
+  <joint name="camera_right_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.0 -0.5 0.0"/>
+    <parent link="camera_left_link"/>
+    <child link="camera_right_link"/>
+  </joint>
+  <joint name="laser_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.0 0.0 -0.8"/>
+    <parent link="chassis_link"/>
+    <child link="laser_link"/>
+  </joint>
+  <joint name="imu_joint" type="fixed">
+    <origin rpy="3.14159 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+    <parent link="chassis_link"/>
+    <child link="imu_link"/>
+  </joint>
+  <joint name="wheel1_joint" type="continuous">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-1.62204 1.720335 -0.30607"/>
+    <parent link="chassis_link"/>
+    <child link="wheel1_link"/>
+    <axis xyz="0.00000 1.00000 0.00000"/>
+  </joint>
+  <joint name="wheel2_joint" type="continuous">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="1.62204 1.720335 -0.30607"/>
+    <parent link="chassis_link"/>
+    <child link="wheel2_link"/>
+    <axis xyz="0.00000 1.00000 0.00000"/>
+  </joint>
+  <joint name="wheel3_joint" type="continuous">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="1.62204 -1.720335 -0.30607"/>
+    <parent link="chassis_link"/>
+    <child link="wheel3_link"/>
+    <axis xyz="0.00000 1.00000 0.00000"/>
+  </joint>
+  <joint name="wheel4_joint" type="continuous">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="-1.62204 -1.720335 -0.30607"/>
+    <parent link="chassis_link"/>
+    <child link="wheel4_link"/>
+    <axis xyz="0.00000 1.00000 0.00000"/>
+  </joint>
+  <link name="base_link">
+  </link>
+  <link name="boxdown_link">
+    <collision name="boxdown_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cube.001.stl" scale="0.92233 0.92233 0.92233"/>
+      </geometry>
+    </collision>
+    <visual name="boxdown">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="29113991.002"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cube.001.stl" scale="0.92233 0.92233 0.92233"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="boxup_link">
+    <collision name="boxup_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00146 -0.02814 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cube.004.stl" scale="0.92233 0.92233 0.92233"/>
+      </geometry>
+    </collision>
+    <visual name="boxup">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="29113991.002"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cube.004.stl" scale="0.92233 0.92233 0.92233"/>
+      </geometry>
+stl/    </visual>
+  </link>
+  <link name="camera_left_link"/>
+  <link name="camera_right_link"/>
+  <link name="laser_link"/>
+  <link name="chassis_link">
+    <collision name="chassis_collision">
+      <origin rpy="0.00000 0.00000 -1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cube.005.stl" scale="1.28179 2.71916 0.22665"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="1.0000" ixy="0.00000" ixz="0.00000" iyy="1.00000" iyz="0.00000" izz="1.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <mass value="1.0000"/>
+    </inertial>
+    <visual name="chassis">
+      <origin rpy="0.00000 0.00000 -1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Allu"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cube.005.stl" scale="1.28179 2.71916 0.22665"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="imu_link"/>
+  <link name="wheel4_link">
+    <collision name="wheel4_collision">
+      <origin rpy="3.14159 0.00000 1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.068.stl" scale="-1.00000 -1.00000 -1.00000"/>
+      </geometry>
+    </collision>
+    <visual name="wheel4">
+      <origin rpy="3.14159 0.00000 1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <material name="29113991.002"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.068.stl" scale="-1.00000 -1.00000 -1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wheel1_link">
+    <collision name="wheel1_collision">
+      <origin rpy="3.14159 0.00000 1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.075.stl" scale="-1.00000 -1.00000 -1.00000"/>
+      </geometry>
+    </collision>
+    <visual name="wheel1">
+      <origin rpy="3.14159 0.00000 1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <material name="29113991.002"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.075.stl" scale="-1.00000 -1.00000 -1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wheel2_link">
+    <collision name="wheel2_collision">
+      <origin rpy="-0.00000 0.00000 1.570795" xyz="-0.00001 -0.00002 -0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.076.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <visual name="wheel2">
+      <origin rpy="-0.00000 0.00000 1.570795" xyz="-0.00000 -0.00000 -0.00000"/>
+      <material name="29113991.002"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.076.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wheel3_link">
+    <collision name="wheel3_collision">
+      <origin rpy="0.00000 0.00000 1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.070.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <visual name="wheel3">
+      <origin rpy="0.00000 0.00000 1.570795" xyz="0.00000 0.00000 0.00000"/>
+      <material name="29113991.002"/>
+      <geometry>
+        <mesh filename="package://rover_pic_moon_description/meshes/stl/Cylinder.070.stl" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <material name="29113991.002">
+    <texture filename="package://rover_pic_moon_description/meshes/textures/grau_geheuse.jpg"/>
+    <color rgba="0.80000 0.80000 0.80000 1.00000"/>
+  </material>
+  <material name="Allu">
+    <color rgba="0.80000 0.80000 0.80000 1.00000"/>
+  </material>
+</robot>
