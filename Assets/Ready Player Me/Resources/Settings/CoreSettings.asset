@@ -15,5 +15,5 @@ MonoBehaviour:
   Subdomain: astronaut-y3zpya
   AppId: 6694ef7e153c867d95f23145
   EnableLogging: 0
-  EnableAnalytics: 0
+  EnableAnalytics: 1
   BodyType: 1
