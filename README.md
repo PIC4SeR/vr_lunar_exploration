@@ -6,6 +6,8 @@
 
 Unity project and supplementary materials for the VR lunar exploration framework presented at IAC 2024.
 
+![image](project-overview.png)
+
 Authors:
 
 - Giacomo Franchini [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0009-0009-5641-8346)
@@ -16,6 +18,22 @@ Supervisor:
 - Marcello Chiaberge [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-1921-0126)
 
 ### Requirements
+
+- Unity Editor version: `2021.3.26f1`;
+- Blender version: `3.6.0`;
+- Meta Quest 3 headset. To set it up, please follow the official guide on https://www.meta.com. 
+
+### Launch the framework
+
+First clone this repository:
+
+```zsh
+git clone https://github.com/PIC4SeR/vr_lunar_exploration.git
+```
+
+Then open the Unity Hub, add it as a project, and launch it.
+
+At the first opening, you could encounter compilation errors of some ROS-related scripts. When Unity is asking to enter the safe mode, press `Ignore` and let the Editor open the project. Then, in the upper toolbar select `Robotics->ROS Settings` and switch the protocol to `ROS2`. The Editor will compile again the scripts and the errors should be removed. 
 
 ## Citation
 
